@@ -1,0 +1,51 @@
+{
+  "name": "@berish/typeof",
+  "version": "1.0.0",
+  "description": "Library for information about the type of any object or primitive",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "repository": "git@gitlab.com:berish/packages/berish-typeof.git",
+  "author": "Berishev Ravil <quadraticteam@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "typeof",
+    "berish",
+    "helper",
+    "native",
+    "js",
+    "ts",
+    "typescript",
+    "standart",
+    "Berishev",
+    "Ravil",
+    "Fartix",
+    "quadraticteam",
+    "jest",
+    "package"
+  ],
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "test:dev": "jest --config jestconfig.json --watch --verbose=false",
+    "build": "tsc -p .",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.2"
+  }
+}
